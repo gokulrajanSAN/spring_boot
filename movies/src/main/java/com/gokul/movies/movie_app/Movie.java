@@ -6,7 +6,7 @@ import lombok.Data;
 @Builder
 @Data
 @Entity
-@Table(name = "Movie List Table")
+@Table(name = "Movie_List_Table")
 public class Movie {
     @Id
     @GeneratedValue(strategy =GenerationType.TABLE)

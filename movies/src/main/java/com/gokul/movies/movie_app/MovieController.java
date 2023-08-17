@@ -25,9 +25,15 @@ public class MovieController {
     public List<Movie> findAllMovies(){
         return movieService.findAllMovies();
     }
+
     @GetMapping("{id}")
-    public Optional findById(@PathVariable Integer id){
-        return movieService.findById(id);
+    public Movie findById(@PathVariable Integer id){
+        Optional<Movie> byId = movieService.findById(id);
+        if (byId.isPresent()){
+            return byId.get();
+        }else {
+            return null;
+        }
     }
     @DeleteMapping("{id}")
     public void deleteById(@PathVariable Integer id){
