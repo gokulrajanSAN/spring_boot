@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("movies")
+@RequestMapping("movieList")
 @RequiredArgsConstructor
 public class MovieController {
-    MovieService movieService;
+    private final MovieService movieService;
 
     @PostMapping
     public void save(@RequestBody Movie movie){
@@ -21,7 +21,7 @@ public class MovieController {
         movieService.update(movie);
     }
 
-    @GetMapping
+    @GetMapping("allMovies")
     public List<Movie> findAllMovies(){
         return movieService.findAllMovies();
     }

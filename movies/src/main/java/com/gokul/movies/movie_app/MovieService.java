@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class MovieService {
-    MovieRepo movieRepo;
+   private final MovieRepo movieRepo;
 
     public void save(Movie movie) {
         movieRepo.save(movie);
