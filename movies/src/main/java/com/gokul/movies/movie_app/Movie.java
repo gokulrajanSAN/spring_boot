@@ -1,15 +1,20 @@
 package com.gokul.movies.movie_app;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-@Builder
+import lombok.NoArgsConstructor;
+
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "Movie_List_Table")
+@Builder
 public class Movie {
     @Id
-    @GeneratedValue(strategy =GenerationType.TABLE)
+    @GeneratedValue(strategy =GenerationType.AUTO)
     @Column(name = "ID")
     Integer id;
 
